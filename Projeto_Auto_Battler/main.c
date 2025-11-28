@@ -34,7 +34,7 @@ int main() {
     srand(time(NULL));
 
     printf("========================================\n");
-    printf("       ⚔️  ARENA CODE: AUTO-BATTLER ⚔️\n");
+    printf("       ⚔️  A ESCURIDÃO DE ALTAIR: AUTO BATTLER ⚔️\n");
     printf("========================================\n\n");
 
     // Criação dos Lutadores (Hardcoded para teste rápido, mas poderia ser via input)
