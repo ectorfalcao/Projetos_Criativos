@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de Ordenação</title>
+    <style>
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        h1 { margin-bottom: 10px; }
+
+        #statusMsg {
+            height: 30px; 
+            color: #2ecc71;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .controls {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 300px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .btn-load { background-color: #3498db; color: white; }
+        .btn-load:hover { background-color: #2980b9; }
+
+        .btn-sort { background-color: #2ecc71; color: white; }
+        .btn-sort:hover { background-color: #27ae60; }
+        .btn-sort:disabled { background-color: #555; cursor: not-allowed; }
+
+        #container-barras {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            height: 400px;
+            width: 90%;
+            border-bottom: 3px solid #555;
+            padding-bottom: 5px;
+            gap: 5px;
+        }
+
+        .barra {
+            width: 40px;
+            background-color: #9b59b6;
+            text-align: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            transition: height 0.3s ease;
+            display: flex;
+            align-items: flex-end; 
+            justify-content: center;
+            padding-bottom: 5px;
+        }
+
+        .comparando { background-color: #e74c3c !important; }
+        .ordenado { background-color: #2ecc71 !important; }
+    </style>
+</head>
+<body>
+
+    <h1>Visualizador de Bubble Sort</h1>
+
+    <div class="controls">
+        <input type="text" id="inputNumeros" placeholder="Digite números: 50, 10, 80..." value="50, 20, 10, 90, 30">
+        <button class="btn-load" onclick="gerarBarras()">1. Carregar Barras</button>
+        <button class="btn-sort" id="btnOrdenar" onclick="iniciarOrdenacao()">2. Ordenar!</button>
+    </div>
+
+    <h2 id="statusMsg"></h2>
+
+    <div id="container-barras"></div>
+
+    <script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        function gerarBarras() {
+            const input = document.getElementById('inputNumeros').value;
+            const container = document.getElementById('container-barras');
+            const statusMsg = document.getElementById('statusMsg');
+            
+            container.innerHTML = ''; 
+            statusMsg.innerText = ''; 
+
+            const numeros = input.split(',').map(num => parseInt(num.trim()));
+
+            if (numeros.some(isNaN)) {
+                alert("Por favor, digite apenas números separados por vírgula.");
+                return;
+            }
+
+            numeros.forEach(num => {
+                const barra = document.createElement('div');
+                barra.classList.add('barra');
+                
+                let alturaVisual = num * 3; 
+                if(alturaVisual > 380) alturaVisual = 380;
+                
+                barra.style.height = `${alturaVisual}px`;
+                barra.innerText = num;
+                barra.setAttribute('data-valor', num);
+
+                container.appendChild(barra);
+            });
+        }
+
+        async function iniciarOrdenacao() {
+            const container = document.getElementById('container-barras');
+            let barras = document.getElementsByClassName('barra');
+            const btnOrdenar = document.getElementById('btnOrdenar');
+            const statusMsg = document.getElementById('statusMsg');
+            
+            btnOrdenar.disabled = true;
+            btnOrdenar.innerText = "Ordenando...";
+            statusMsg.innerText = ""; 
+
+            for (let i = 0; i < barras.length; i++) {
+                for (let j = 0; j < barras.length - i - 1; j++) {
+                    
+                    barras[j].style.backgroundColor = '#e74c3c';
+                    barras[j + 1].style.backgroundColor = '#e74c3c';
+
+                    await sleep(400);
+
+                    const valor1 = parseInt(barras[j].getAttribute('data-valor'));
+                    const valor2 = parseInt(barras[j + 1].getAttribute('data-valor'));
+
+                    if (valor1 > valor2) {
+                        container.insertBefore(barras[j + 1], barras[j]);
+                        barras = document.getElementsByClassName('barra');
+                    }
+
+                    barras[j].style.backgroundColor = '#9b59b6';
+                    barras[j + 1].style.backgroundColor = '#9b59b6';
+                }
+               
+                barras[barras.length - i - 1].classList.add('ordenado');
+            }
+    
+            if(barras.length > 0) {
+                barras[0].classList.add('ordenado');
+            }
+            
+            statusMsg.innerText = "ORDENADO! Método: Bubble Sort";
+            
+            btnOrdenar.disabled = false;
+            btnOrdenar.innerText = "2. Ordenar!";
+        }
+
+        window.onload = gerarBarras;
+    </script>
+</body>
+</html>
