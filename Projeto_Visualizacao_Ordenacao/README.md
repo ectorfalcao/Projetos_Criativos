@@ -4,7 +4,7 @@ Este projeto é uma ferramenta interativa desenvolvida para visualizar o funcion
 
 ---
 
-#🚀 Funcionalidades
+# 🚀 Funcionalidades
 
 Input Personalizado: O usuário pode inserir qualquer sequência de números separados por vírgula.
 
@@ -29,6 +29,29 @@ Este projeto foi construído utilizando tecnologias web nativas, sem dependênci
 ![alt text](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![alt text](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![alt text](https://img.shields.io/badge/Lógica_Algorítmica-5C2D91?style=for-the-badge)
+
+---
+
+## 🔄 Integração de Saberes: Algoritmos + Web
+
+Este projeto representa o **ponto de convergência** de todos os conhecimentos adquiridos durante o semestre. Ele não é apenas uma página bonita, nem apenas um código lógico; é a fusão de ambos.
+
+Aqui está como este visualizador conecta as disciplinas:
+
+### 1. A Lógica (Herança de Algoritmos e C)
+A "alma" deste projeto é o algoritmo **Bubble Sort**.
+*   A mesma lógica de laços aninhados (`for i`, `for j`) e trocas de variáveis (`swap`) que estudei em **Linguagem C** foi traduzida para **JavaScript**.
+*   A diferença é que, em vez de ver números mudando em um terminal preto, vemos barras se movendo na tela.
+
+### 2. A Estrutura e Estilo (Front End)
+Para dar vida ao algoritmo, utilizei técnicas modernas de **CSS**:
+*   **Flexbox:** Para alinhar as barras verticalmente (`align-items: flex-end`) e centralizá-las dinamicamente.
+*   **Design Responsivo:** As barras se ajustam conforme o valor numérico inserido.
+
+### 3. A Ponte (JavaScript e DOM)
+O JavaScript atuou como o "maestro", manipulando o **DOM** em tempo real.
+*   **Assincronicidade:** O uso de `async/await` e `Promises` permitiu criar o "delay" na animação, fazendo com que o computador "espere" para que o olho humano consiga acompanhar a troca das barras.
+*   **Manipulação Visual:** O script altera as cores das barras (`vermelho` para comparação, `verde` para ordenado) dinamicamente, facilitando o entendimento didático do algoritmo.
 
 ---
 
