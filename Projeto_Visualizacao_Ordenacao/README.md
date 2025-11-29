@@ -73,9 +73,11 @@ Troca (Swap): Se o elemento da esquerda for maior que o elemento da direita, ele
 
 Repetição: Esse processo se repete até que nenhuma troca seja necessária ou até que todos os elementos tenham sido fixados no final da lista.
 
-# Complexidade
-# * Melhor caso: O( _n_ ) (quando a lista já está ordenada).
-# * Pior caso: O( _n²_)(quando a lista está inversamente ordenada).
+Complexidade
+
+* Melhor caso: O( _n_ ) (quando a lista já está ordenada).
+
+* Pior caso: O( _n²_)(quando a lista está inversamente ordenada).
 
 Neste visualizador: Você verá o par de barras ficar vermelho. Se a barra da esquerda for maior, elas trocam de posição visualmente. Ao final de cada passagem, a maior barra do grupo restante fica verde, indicando que está "travada" na posição correta.
 
@@ -98,6 +100,7 @@ Clique em "1. Carregar Barras".
 Clique em "2. Ordenar!" e assista à mágica acontecer.
 
 ---
+
 # 💻 Trecho de Código em Destaque
 
 Abaixo está a função JavaScript responsável pela realização da ordenação, meu maior aprendizado durante o desenvolvimento deste projeto dentro da área que mais gosto, a lógica:
