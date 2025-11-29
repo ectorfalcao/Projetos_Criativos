@@ -52,9 +52,12 @@ Projetos_Criativos/
 └── README.md
 ```
 📞 Contato & Conexões
+
 Gostou de algum projeto ou quer sugerir uma ideia?
+
 <a href="https://www.linkedin.com/in/ector-falcão-353a09382" target="_blank">
 <img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
 <a href="mailto:ector_100@hotmail.com" target="_blank">
 <img src="https://img.shields.io/badge/-Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+
 “A criatividade é a inteligência se divertindo.” – Albert Einstein
