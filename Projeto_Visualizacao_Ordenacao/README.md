@@ -51,8 +51,8 @@ Troca (Swap): Se o elemento da esquerda for maior que o elemento da direita, ele
 Repetição: Esse processo se repete até que nenhuma troca seja necessária ou até que todos os elementos tenham sido fixados no final da lista.
 
 # Complexidade
-# * Melhor caso: O(n)O(_n_) (quando a lista já está ordenada).
-# * Pior caso: O(n2)O(_n_²)(quando a lista está inversamente ordenada).
+# * Melhor caso: O(n)O( _n_ ) (quando a lista já está ordenada).
+# * Pior caso: O(n2)O( _n²_)(quando a lista está inversamente ordenada).
 
 Neste visualizador: Você verá o par de barras ficar vermelho. Se a barra da esquerda for maior, elas trocam de posição visualmente. Ao final de cada passagem, a maior barra do grupo restante fica verde, indicando que está "travada" na posição correta.
 
