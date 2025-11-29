@@ -9,7 +9,7 @@
 ## 🧠 Sobre este Repositório
 Este é o meu **Jardim Digital**. Um espaço dedicado a projetos desenvolvidos fora do currículo acadêmico obrigatório, onde conecto minhas **Hard Skills** (Programação, Modelagem, Front End) com minhas paixões pessoais: **Cinema, Literatura, Jogos, Escrita e Arte.**
 
-O objetivo aqui não é apenas escrever código funcional, mas criar experiências, ferramentas e narrativas que explorem a intersecção entre tecnologia e criatividade.
+O objetivo aqui não é apenas escrever código funcional, mas criar experiências, ferramentas e narrativas que explorem a intersecção entre tecnologia e criatividade, misturando os aprendizados das matérias da faculdade ou apenas exemplificando estes aprendizados.
 
 ---
 
