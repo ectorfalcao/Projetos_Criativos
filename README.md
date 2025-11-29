@@ -48,7 +48,7 @@ O conjunto de ferramentas que utilizo para dar vida a essas ideias:
 Projetos_Criativos/
 ├── Projeto_Auto_Battler/   # Projeto Principal
 │   └── README.md
-    └── main.c
+│   └── main.c
 └── README.md
 ```
 📞 Contato & Conexões
