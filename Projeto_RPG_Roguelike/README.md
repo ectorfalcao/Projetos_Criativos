@@ -152,6 +152,26 @@ void adicionar_cartas_item(Gladiador *g, char *item, char *slot) {
 ```
 
 ---
+## 🚀 Como Executar
+
+O jogo foi escrito em C padrão e pode ser compilado em Windows ou Linux.
+
+### Pré-requisitos
+*   Compilador GCC (MinGW no Windows ou build-essential no Linux).
+
+### Compilando e Rodando
+
+```bash
+# Compile o código
+gcc main.c -o altair_rpg
+
+# Execute o jogo (Linux/Mac)
+./altair_rpg
+
+# Execute o jogo (Windows)
+altair_rpg.exe
+```
+---
 
 <div align="center">
 <sub>“Desenvolvido por Ector Falcão.</sub>
