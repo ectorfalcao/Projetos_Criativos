@@ -33,8 +33,7 @@ void fast_clear() {
 #define MAO_TAMANHO 3
 #define MANA_MAX 3
 #define MAX_LOG_COMBATE 500 
-// Largura máxima exata para o texto do histórico antes de quebrar
-#define MAX_LOG_WIDTH 45 
+#define MAX_LOG_WIDTH 45 // Largura reduzida para evitar quebra de linha visual
 
 // Settings Globais
 int modo_dificil = 0; 
@@ -52,8 +51,7 @@ typedef struct {
     int custo_mana;
     int valor_base;
     int eh_roubo;
-// 0 = Base, 1+ = Melhorada
-    int nivel; 
+    int nivel; // 0 = Base, 1+ = Melhorada
 } Carta;
 
 // Struct do Personagem
@@ -126,7 +124,7 @@ int main() {
     do {
         LIMPA_TELA;
         printf("\n+=======================================+\n");
-        printf("|  ALTAIR, o Renascido: ROGUELIKE RPG   |\n");
+        printf("|   ALTAIR, o Renascido: ROGUELIKE RPG  |\n");
         printf("+=======================================+\n");
         printf("| 1. Novo Jogo                          |\n");
         printf("| 2. Hall da Fama                       |\n");
@@ -166,7 +164,6 @@ Carta criar_carta(char* n, char* d, char* o, TipoMovimento t, int c, int v) {
 void adicionar_cartas_item(Gladiador *g, char *item, char *slot) {
     if (strcmp(item, "Nada") == 0) return;
 
-    // --- ARMAS ---
     if (strstr(item, "Espada")) { 
         g->deck[g->qtd_cartas++] = criar_carta("Lacerar", "7 Dano", item, TIPO_ATK, 2, 7);
         g->deck[g->qtd_cartas++] = criar_carta("Contra-Ataque", "5 Escudo", item, TIPO_DEF, 1, 5);
@@ -180,7 +177,6 @@ void adicionar_cartas_item(Gladiador *g, char *item, char *slot) {
         g->deck[g->qtd_cartas++] = criar_carta("Bomba Fumaça", "60% Esquiva", item, TIPO_ESQ, 2, 60);
     }
 
-    // --- ARMADURAS ---
     if (strstr(item, "Placas")) {
         g->deck[g->qtd_cartas++] = criar_carta("Fortaleza", "12 Escudo", item, TIPO_DEF, 2, 12);
         g->deck[g->qtd_cartas++] = criar_carta("Esmagar", "10 Dano Pesado", item, TIPO_ATK, 2, 10);
@@ -194,7 +190,6 @@ void adicionar_cartas_item(Gladiador *g, char *item, char *slot) {
         g->deck[g->qtd_cartas++] = criar_carta("Revidar", "4 Dano Rápido", item, TIPO_ATK, 0, 4);
     }
 
-    // --- ACESSORIOS ---
     if (strstr(item, "Anel")) {
         g->deck[g->qtd_cartas++] = criar_carta("Sorte", "Cura 5 HP", item, TIPO_ESP, 2, 5);
         g->deck[g->qtd_cartas++] = criar_carta("Foco", "Recupera Mana", item, TIPO_ESP, 0, 0);
@@ -242,7 +237,6 @@ void construir_deck(Gladiador *g) {
 
     g->qtd_cartas = 0;
 
-    // DECK BASE EXPANDIDO
     if (g->classe == GUERREIRO) {
         g->deck[g->qtd_cartas++] = criar_carta("Soco", "3 Dano", "Base", TIPO_ATK, 1, 3);
         g->deck[g->qtd_cartas++] = criar_carta("Defender", "4 Escudo", "Base", TIPO_DEF, 1, 4);
@@ -299,21 +293,17 @@ void log_add(char *msg) {
 
     int len = strlen(msg);
     
-    // Se a mensagem cabe numa linha, adiciona normalmente
     if (len <= MAX_LOG_WIDTH) {
         strncpy(log_global[log_contador], msg, 99);
         log_contador++;
     } else {
-        // Se a mensagem é muito longa, divide em duas partes
         char part1[MAX_LOG_WIDTH + 1];
         strncpy(part1, msg, MAX_LOG_WIDTH);
         part1[MAX_LOG_WIDTH] = '\0';
         
-        // Adiciona a primeira parte
         strncpy(log_global[log_contador], part1, 99);
         log_contador++;
         
-        // Se ainda tiver espaço no array, adiciona o resto (recursivamente)
         if (log_contador < MAX_LOG_COMBATE) {
             log_add(msg + MAX_LOG_WIDTH);
         }
@@ -324,6 +314,7 @@ void executar_acao(Gladiador *atk, Gladiador *def, Carta c) {
     char buffer[60];
 
     int ja_viu = 0;
+    // CORREÇÃO: Inicialização de qtd_conhecidos agora é garantida no game_loop
     for(int i=0; i<def->qtd_conhecidos; i++) {
         if(strstr(def->conhecidos[i], c.nome)) ja_viu=1;
     }
@@ -444,14 +435,14 @@ void render_combate(Gladiador p, Gladiador e, int round) {
         for(int i=0; i<p.qtd_cartas; i++) if(strcmp(p.deck[i].origem, p.item_acessorio)==0) fmt_card(i, panel[l++]);
     }
 
-    // --- HUD REFORMULADA (2 LINHAS ALINHADAS) ---
+    // --- HUD ---
     printf("=== ROUND %d ===\n", round);
     
     char p_class_str[15], e_class_str[15];
     strcpy(p_class_str, (p.classe == MAGO ? "Mago" : (p.classe == LADINO ? "Ladino" : "Guerreiro")));
     strcpy(e_class_str, (e.classe == MAGO ? "Mago" : (e.classe == LADINO ? "Ladino" : "Guerreiro")));
 
-    char buf_nome_p[30], buf_classe_p[20], buf_nome_e[30], buf_classe_e[20];
+    char buf_nome_p[MAX_NOME + 10], buf_classe_p[20], buf_nome_e[MAX_NOME + 10], buf_classe_e[20];
     sprintf(buf_nome_p, "[%s]", p.nome);
     sprintf(buf_classe_p, "(%s)", p_class_str);
     sprintf(buf_nome_e, "[%s]", e.nome);
@@ -483,7 +474,7 @@ void render_combate(Gladiador p, Gladiador e, int round) {
         else strcpy(col_art, "                                        ");
         
         char col_deck[45] = "";
-        if (i < l) sprintf(col_deck, "%-38.38s", panel[i]);
+        if (i < l) sprintf(col_deck, "%-38.38s", panel[i]); // Truncate at 38
         else sprintf(col_deck, "%-38s", "");
 
         char col_log[60] = "";
@@ -491,7 +482,7 @@ void render_combate(Gladiador p, Gladiador e, int round) {
             strcpy(col_log, " | --- HISTÓRICO ---");
         } else {
             int log_idx = start_log + (i-1);
-            if (log_idx < log_contador) sprintf(col_log, " | %.45s", log_global[log_idx]);
+            if (log_idx < log_contador) sprintf(col_log, " | %.45s", log_global[log_idx]); // Truncate at 45
         }
 
         printf("%s | %s%s\n", col_art, col_deck, col_log);
@@ -499,7 +490,6 @@ void render_combate(Gladiador p, Gladiador e, int round) {
 
     printf("--------------------------------------------------------------------------------------------------------------------------\n");
 
-    // LÓGICA DO STATUS LATERAL (JOGUE OU PASSE)
     int tem_jogada = 0;
     for(int i=0; i<MAO_TAMANHO; i++) {
         if (p.mao[i].custo_mana != -1 && p.mana >= p.mao[i].custo_mana) {
@@ -512,7 +502,6 @@ void render_combate(Gladiador p, Gladiador e, int round) {
     else if (tem_jogada) strcpy(status_msg, "JOGUE OU PASSE (4)");
     else strcpy(status_msg, "PASSE O TURNO (4)");
 
-    // Exibe a mão mesmo se Altair estiver morto, para o jogador ver o estado final
     if (p.hp > 0) {
         printf("SUA MÃO:%45s %s\n", "", "INSTRUÇÃO");
         
@@ -579,6 +568,9 @@ void game_loop() {
         altair.classe = c_bot; altair.eh_jogador = 0;
         altair.mana_max = MANA_MAX; altair.escudo_temp = 0; altair.esquiva_acumulada = 0;
         
+        // CORREÇÃO CRÍTICA: Inicializa a pokedex do inimigo
+        altair.qtd_conhecidos = 0;
+
         if (round == 1) {
             strcpy(altair.nome, "Altair (Iniciante)");
             altair.hp_max = (modo_dificil ? 15 : 10);
@@ -669,7 +661,6 @@ void game_loop() {
                             executar_acao(&player, &altair, player.mao[idx]);
                             player.mao[idx].custo_mana = -1; 
                             
-                            // SE ALTAIR MORRER NO MEIO DO COMBO, MOSTRA A TELA E PARA
                             if (altair.hp <= 0) {
                                 render_combate(player, altair, round);
                                 char dummy[10]; fgets(dummy, sizeof(dummy), stdin);
