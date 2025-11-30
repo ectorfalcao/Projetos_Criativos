@@ -118,7 +118,11 @@ void gerar_descricao_dinamica(char* buffer, Carta c, int valor);
 
 // --- MAIN (MENU) ---
 int main() {
-    setlocale(LC_ALL, ""); 
+    #ifdef _WIN32
+    SetConsoleOutputCP(65001); 
+    #endif
+    setlocale(LC_ALL, "C.UTF-8");
+    setlocale(LC_ALL, "portuguese_Brazil.utf8"); 
     srand(time(NULL));
     int op;
     do {
