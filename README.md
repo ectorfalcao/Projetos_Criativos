@@ -46,9 +46,15 @@ O conjunto de ferramentas que utilizo para dar vida a essas ideias:
 
 ```text
 Projetos_Criativos/
-├── Projeto_Auto_Battler/   # Projeto Principal
+├── Projeto_Auto_Battler/   # Jogo automático de gerir atributos no console
 │   └── README.md
 │   └── main.c
+├── Projeto_RPG_Roguelike/   # RPG de turnos baseado em cartas no console
+│   └── README.md
+│   └── main.c
+├── Projeto_Visualizacao_Ordenacao/   # Visualizador de bubble sort
+│   └── README.md
+│   └── index.html
 └── README.md
 ```
 📞 Contato & Conexões
