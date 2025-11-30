@@ -39,6 +39,8 @@ O conjunto de ferramentas que utilizo para dar vida a essas ideias:
 | Projeto | Categoria | Tecnologias Principais | Descrição | Acesso |
 | :--- | :--- | :--- | :--- | :---: |
 | **Projeto Auto Battler** | 🎮 Jogos / Simulação | C, Structs, Lógica de Combate | Simulador de batalhas automáticas (estilo RPG) onde unidades lutam baseadas em atributos, classes e estratégias pré-definidas. | [📂 Ver Projeto](./Projeto_Auto_Battler) |
+| **Projeto RPG Roguelike** | 🎮 Jogos / Simulação | C, Structs, Lógica de Combate tático | Simulador de cardgame estilo RPG com classes e sistema de upgrade | [📂 Ver Projeto](./Projeto_RPG_Roguelike) |
+| **Visualizador de Bubble Sort** | 📊 Algorítmos / Análise | HTML puro | Site em HTML com opção para inserir valores e observa-los serem ordenados em Bubble Sort | [📂 Ver Projeto](./Projeto_Visualizacao_Ordenacao) |
 
 ---
 
