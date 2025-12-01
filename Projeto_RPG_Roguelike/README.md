@@ -150,6 +150,13 @@ void adicionar_cartas_item(Gladiador *g, char *item, char *slot) {
     // Lógica similar para armaduras e acessórios...
 }
 ```
+---
+
+## 📸 Visual do Jogo
+
+Abaixo, uma demonstração da interface final renderizada no terminal. O layout foi desenhado para exibir simultaneamente a arte do personagem, as cartas disponíveis na mão e o historico descritivo de combate.
+
+![Demonstração do Gameplay](demonstracao.png)
 
 ---
 ## 🚀 Como Executar
