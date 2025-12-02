@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art Maker</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Pixel Art Maker</h1>
+            <p>Desenhe, crie e divirta-se!</p>
+        </header>
+
+        <section class="controls">
+
+            <div class="control-group">
+                <label>Altura:</label>
+                <input type="number" id="inputHeight" name="height" min="1" max="50" value="20">
+                <label>Largura:</label>
+                <input type="number" id="inputWidth" name="width" min="1" max="50" value="20">
+            </div>
+
+            <div class="control-group">
+                <label>Cor:</label>
+                <input type="color" id="colorPicker" value="#000000">
+            </div>
+
+            <div class="control-group">
+                <button id="btnCriar" class="btn-primary">
+                    <i class="material-icons">grid_on</i> Criar Grade
+                </button>
+                <button id="btnLimpar" class="btn-secondary">
+                    <i class="material-icons">delete</i> Limpar
+                </button>
+                <button id="btnBorracha" class="btn-secondary">
+                    <i class="material-icons">auto_fix_high</i> Borracha
+                </button>
+                    <button id="btnSalvar" class="btn-primary">
+                    <i class="material-icons">download</i> Salvar
+                </button>
+            </div>
+        </section>
+
+        <div id="pixelCanvas" class="canvas"></div>
+    </div>
+
+    <script src="js/configuracoes.js"></script>
+</body>
+</html>
