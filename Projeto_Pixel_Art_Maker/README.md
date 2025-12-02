@@ -67,3 +67,7 @@ A IA foi **inteiramente responsável por toda a parte visual do projeto**, encar
 - Desenvolvimento de todo o código CSS.
 - Layout e diagramação dos elementos utilizando Flexbox e CSS Grid.
 - Estilização dos componentes interativos (botões com efeitos de clique, inputs e ícones).
+
+<div align="center">
+<sub>“Desenvolvido por Ector Falcão.</sub>
+</div>
