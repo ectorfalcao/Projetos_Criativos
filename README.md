@@ -39,8 +39,10 @@ O conjunto de ferramentas que utilizo para dar vida a essas ideias:
 | Projeto | Categoria | Tecnologias Principais | Descrição | Acesso |
 | :--- | :--- | :--- | :--- | :---: |
 | **Projeto Auto Battler** | 🎮 Jogos / Simulação | C, Structs, Lógica de Combate | Simulador de batalhas automáticas (estilo RPG) onde unidades lutam baseadas em atributos, classes e estratégias pré-definidas. | [📂 Ver Projeto](./Projeto_Auto_Battler) |
-| **Projeto RPG Roguelike** | 🎮 Jogos / Simulação | C, Structs, Lógica de Combate tático | Simulador de cardgame estilo RPG com classes e sistema de upgrade | [📂 Ver Projeto](./Projeto_RPG_Roguelike) |
-| **Visualizador de Bubble Sort** | 📊 Algorítmos / Análise | HTML puro | Site em HTML com opção para inserir valores e observa-los serem ordenados em Bubble Sort | [📂 Ver Projeto](./Projeto_Visualizacao_Ordenacao) |
+| **Sobreviva e Proteja** | 🎮 Jogos / Simulação | C, Structs, Gestão de Memória, Persistência | Text-adventure de sobrevivência robusto com ciclo dia/noite, gestão de recursos, recrutamento de NPCs, crafting e eventos aleatórios. | [📂 Ver Projeto](./Projeto_Sobrevivencia_Zumbi) |
+| **Projeto RPG Roguelike** | 🎮 Jogos / Simulação | C, Structs, Lógica de Combate tático | Simulador de cardgame estilo RPG com classes e sistema de upgrade. | [📂 Ver Projeto](./Projeto_RPG_Roguelike) |
+| **Visualizador de Bubble Sort** | 📊 Algoritmos / Análise | HTML puro | Site em HTML com opção para inserir valores e observá-los serem ordenados em Bubble Sort. | [📂 Ver Projeto](./Projeto_Visualizacao_Ordenacao) |
+| **Pixel Art Maker** | 🎨 Front-End / Criatividade | HTML5, CSS3, JavaScript (DOM) | Editor gráfico web interativo que permite criar desenhos em Pixel Art através de uma grade dinâmica e manipulável. | [📂 Ver Projeto](./Projeto_Pixel_Art_Maker) |
 
 ---
 
