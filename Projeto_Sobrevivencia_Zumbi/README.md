@@ -77,6 +77,38 @@ A interface é **Numpad-Friendly**, projetada para jogabilidade rápida.
 
 ---
 
+## 📸 Gameplay e Interface
+
+> *"Uma interface limpa para um mundo sujo."*
+
+![Interface do Jogo - HUD Principal](./sobreviva_e_proteja.png)
+*(Captura de tela da versão atual rodando no terminal)*
+
+A imagem acima demonstra a **HUD (Heads-Up Display)** central do jogo, projetada para fornecer todas as informações vitais de relance, sem a necessidade de navegar por submenus complexos:
+
+*   **Status Vitais (Topo Esquerdo):** Monitoramento em tempo real de Vida, Energia e a crucial porcentagem de Segurança da base.
+*   **Log & Inventário (Topo Direito):** Um histórico rolante das últimas ações (combates, coletas) e resumo rápido de recursos (Munição, Pilhas, Comida).
+*   **Visualização de Local (Centro):** Artes em ASCII que mudam conforme você viaja (Base, Cidades, Serras), aumentando a imersão.
+*   **Narrativa e Comandos (Inferior):** Onde a história se desenrola e onde você toma as decisões que definirão o futuro do jogo.
+
+---
+
+## 🚧 O que falta? (Limitações Técnicas)
+
+Embora o jogo esteja funcional e jogável do início ao fim, existe uma decisão de design específica que você notará nos textos:
+
+### 🔤 Por que não há acentos?
+Você perceberá que palavras como "Ação", "Éden" ou "Você" estão escritas como **"Acao"**, **"Eden"** e **"Voce"**.
+
+**O Motivo:**
+O jogo utiliza uma renderização de interface baseada em caracteres (ASCII) desenhada manualmente linha por linha. A inclusão de caracteres acentuados (UTF-8 / Extended ASCII) em C cria conflitos na contagem de *bytes* versus *espaço visual* no terminal.
+
+Basicamente, um caractere como `ç` pode ocupar 2 bytes na memória, mas apenas 1 espaço na tela. Isso fazia com que os cálculos de alinhamento das bordas `|` e `+` falhassem, **quebrando todo o layout da HUD e deformando as caixas de texto.**
+
+Para garantir uma experiência visual sólida, alinhada e compatível entre Windows e Linux sem "glitches" visuais, a acentuação foi removida temporariamente nesta versão.
+
+---
+
 ## 🏗️ Estrutura do Código
 
 Para os curiosos e devs, o jogo é uma "catedral monolítica" em C estruturado:
