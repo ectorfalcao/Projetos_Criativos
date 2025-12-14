@@ -62,6 +62,9 @@ Projetos_Criativos/
 ├── Projeto_RPG_Roguelike/   # RPG de turnos baseado em cartas no console
 │   └── README.md
 │   └── main.c
+├── Projeto_Sobrevivencia_Zumbi/   # Simulador de sobrevivência pós apocalipse zumbi
+│   └── README.md
+│   └── main.c
 ├── Projeto_Visualizacao_Ordenacao/   # Visualizador de bubble sort
 │   └── README.md
 │   └── index.html
