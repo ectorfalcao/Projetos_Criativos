@@ -55,8 +55,8 @@ Projetos_Criativos/
 │   └── main.c
 ├── Projeto_Pixel_Art_Maker/   # Canva para pixel art com exportação
 │   └── css
-    └── js
-    └── README.md
+│   └── js
+│   └── README.md
 │   └── index.html
 └── README.md
 ├── Projeto_RPG_Roguelike/   # RPG de turnos baseado em cartas no console
