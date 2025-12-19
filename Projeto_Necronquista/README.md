@@ -162,6 +162,7 @@ Requisitos: Windows (devido às bibliotecas windows.h e conio.h).
 Compilador: GCC (MinGW) ou Visual Studio.
 
 Arquivo de Áudio: Coloque um arquivo chamado tema.mp3 na mesma pasta do executável (tema de Necromancer Tower como sugestão).
+Sugestão de audio: https://www.youtube.com/watch?v=N6nyV5JoTx4&list=RDN6nyV5JoTx4&start_radio=1 (converta para mp3 e altere o nome para tema)
 
 Comando GCC:
 
