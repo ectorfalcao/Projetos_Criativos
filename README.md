@@ -75,6 +75,30 @@ Projetos_Criativos/
 │   └── index.html
 └── README.md
 ```
+---
+
+## 🌟 Destaque Atual
+
+<div align="center">
+  <a href="./Projeto_Necronquista">
+    <img src="./Projeto_Necronquista/menu_inicial.png" alt="Menu Inicial Necronquista" width="800">
+  </a>
+</div>
+
+### 💀 [Necronquista: A Queda de Vitalhia](./Projeto_Necronquista)
+
+**O que é:**
+Um jogo de estratégia, gerenciamento de recursos e *Auto-Battler* desenvolvido inteiramente em C. O jogador assume o papel de um Necromante em uma marcha contra o reino dos vivos, precisando equilibrar sua própria vida, mana e cadáveres para invocar e manter um exército de criaturas.
+
+**🏆 Por que este projeto é o destaque?**
+Enquanto outros projetos neste repositório demonstram algoritmos isolados, o **Necronquista** representa a aplicação prática de uma arquitetura de software completa. Ele supera a complexidade padrão de exercícios acadêmicos ao implementar:
+
+1.  **Listas Encadeadas e Alocação Dinâmica:** O exército não é um vetor fixo, mas uma estrutura de dados dinâmica que cresce e diminui na memória RAM (`malloc`/`free`) conforme o combate acontece.
+2.  **Persistência de Dados Binária:** Implementação de sistemas de *Save/Load* e progressão global (Loja e Cemitério) que mantêm dados entre execuções.
+3.  **Interface de Console Avançada:** Uso direto da API do Windows para manipulação de cursor, cores, áudio e renderização de quadros sem *flickering*.
+
+---
+
 📞 Contato & Conexões
 
 Gostou de algum projeto ou quer sugerir uma ideia?
