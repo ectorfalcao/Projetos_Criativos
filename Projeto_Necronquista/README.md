@@ -167,7 +167,7 @@ Comando GCC:
 
 ```code
 
-gcc necronquista.c -o necronquista.exe -lwinmm
+gcc main.c -o necronquista.exe -lwinmm
 ```
 
 ---
