@@ -25,15 +25,15 @@ O jogo coloca você na pele de um Necromante marchando contra o reino de Vitalhi
 ## 📸 Galeria (Screenshots)
 
 ### 🖥️ Menu Inicial
-![Menu Inicial](https://via.placeholder.com/800x400.png?text=Menu+Principal+com+ASCII+Art)
+![Menu Inicial](menu_inicial.png)
 *Interface de boas-vindas com arte ASCII customizada e menu de navegação.*
 
 ### ⚔️ Interface de Jogo (HUD)
-![HUD](https://via.placeholder.com/800x400.png?text=HUD+do+Jogo:+Menu+Esquerda,+Status+Direita)
+![HUD](Interface_Gameplay.png)
 *Layout de 3 colunas: Menu de Ações (Esq), Status Visual (Dir) e Lista Tática (Baixo/Dir).*
 
 ### 🏛️ Templo de Thanecrothos (Loja)
-![Loja](https://via.placeholder.com/800x400.png?text=Loja+de+Artefatos+e+Upgrades)
+![Loja](Templo_Thanecrothos.png)
 *Sistema de progressão persistente onde moedas obtidas em runs anteriores compram vantagens permanentes.*
 
 ---
