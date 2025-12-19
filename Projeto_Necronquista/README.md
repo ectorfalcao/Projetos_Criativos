@@ -22,6 +22,21 @@ O jogo coloca você na pele de um Necromante marchando contra o reino de Vitalhi
 
 ---
 
+## ⚠️ Nota Técnica: Ausência de Acentuação
+
+Durante a execução do **Necronquista**, você notará que os textos estão sem acentuação (ex: *"Exercito"* em vez de *"Exército"*).
+
+Esta foi uma **decisão de engenharia** deliberada para garantir a estabilidade da interface visual (TUI).
+
+### 🔧 O Motivo Técnico
+O jogo utiliza um sistema de renderização de caixas e bordas baseado em contagem de caracteres para manter o alinhamento.
+*   Em C, caracteres acentuados (padrão UTF-8) são **Multibyte**, ocupando **2 bytes** na memória, mas apenas **1 espaço visual** no terminal.
+*   Isso cria uma discrepância entre o cálculo de tamanho da string (`strlen`) e a renderização real, fazendo com que as bordas da HUD quebrem ou fiquem desalinhadas.
+
+Para assegurar uma experiência "pixel-perfect" e compatibilidade total com o terminal do Windows sem a necessidade de bibliotecas gráficas externas, optou-se pelo uso estrito da tabela **ASCII Padrão (7-bit)**.
+
+---
+
 ## 📸 Galeria (Screenshots)
 
 ### 🖥️ Menu Inicial
